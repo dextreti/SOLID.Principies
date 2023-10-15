@@ -1,7 +1,8 @@
-﻿using ISP.Solution;
+﻿using s= ISP.Solution;
+using v= ISP.Violation;
 using System;
 
-namespace OCP
+namespace ISP
 {
     /// <summary>
     /// Los objetos no deberían verse forzados a depender de interfaces que no utilizan
@@ -12,14 +13,14 @@ namespace OCP
         static void Main(string[] args)
         {
             // Viola el principio
-            Penguin penguin = new Penguin();
+            v.Penguin penguin = new v.Penguin();
             penguin.Walk();
             penguin.Jump();
-            //penguin.Fly();
+            penguin.Fly(); // los pinguinos no vuelan, pero la inteface que extiende te obliga a definirlo
 
 
             // cumple el principio
-            Duck duck = new Duck();
+            s.Duck duck = new s.Duck();
             duck.Walk();
             duck.Jump();
             duck.Fly();
