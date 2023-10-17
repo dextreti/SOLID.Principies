@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace SRP.Solution
 {
-    public class RobotDriver
+    public interface ICalculate
     {
-        public void Driver(string destino)
-        {
-            Console.WriteLine("soy conductor:{0}", destino);
-        }
+       double Taxe(double Amount);
+       double Iva(double Amount);
+
     }
 }

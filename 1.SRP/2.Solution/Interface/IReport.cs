@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace SRP.Solution
 {
-    public class RobotPainter
+    internal interface IReport<in T> 
     {
-        public void Painter(string color)
-        {
-            Console.WriteLine("soy pintor:{0}", color);
-        }
+       void Excel(T obj, double Amount);
+       void Pdf(T obj, double Amount);
     }
 }

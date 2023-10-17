@@ -45,12 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="2.Solution\RobotDriver.cs" />
+    <Compile Include="2.Solution\Employee.cs" />
+    <Compile Include="2.Solution\Interface\IReport.cs" />
+    <Compile Include="2.Solution\Services\ServiceCalculate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="2.Solution\RobotCook.cs" />
-    <Compile Include="2.Solution\RobotPainter.cs" />
-    <Compile Include="1.Violation\Robot.cs" />
+    <Compile Include="2.Solution\Reports\EmployeeReport.cs" />
+    <Compile Include="2.Solution\Interface\ICalculate.cs" />
+    <Compile Include="1.Violation\Employee.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

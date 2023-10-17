@@ -1,28 +1,34 @@
-﻿using SRP.Solution;
-using SRP.Violation;
+﻿
+using s= SRP.Solution;
+using v=SRP.Violation;
 using System;
+using SRP.Solution;
 
 namespace SRP
 {
     class Program
     {
+        /// <summary>
+        /// This project exaple single
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-            // Case: viola el principio
+            // Case: violates the principle
 
-            Robot robot = new Robot();
-            robot.Cook("preparo un pollo asado");
-            robot.Painter("pintare color rojo");
-            robot.Driver("te llevo a la laguna");
+            v.Employee vEmpleado = new v.Employee { Name = "Robert", Salary = 80000 };
+            var salarycalculate = vEmpleado.CalculateIva(vEmpleado.Salary);
+            vEmpleado.Report("Pdf", salarycalculate);
 
-            // case : cumple el principio
 
-            RobotCook robotCook = new RobotCook();
-            robotCook.Cook("preparo un pollo asado");
-            RobotDriver robotDriver = new RobotDriver();
-            robotDriver.Driver("Te llevo al mirador");
-            RobotPainter robotPainter = new RobotPainter();
-            robotPainter.Painter("Pintare de color azul");
+            // case : fulfills the principle
+            s.Employee sEmpleado = new s.Employee { Name = "Jhonn", Salary = 50000 };
+
+            s.ICalculate calculate = new s.ServiceCalculate();
+            var CalulateSalary = calculate.Iva(sEmpleado.Salary);
+
+            s.IReport<Employee> report = new s.EmployeeReport<Employee>();
+            report.Pdf(sEmpleado, CalulateSalary);
 
             Console.ReadLine();
 
